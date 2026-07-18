@@ -27,6 +27,14 @@ pub enum Status {
     Done,
 }
 
+impl IntoIterator for TicketStore {
+    type Item = Ticket;
+    type IntoIter = <Vec<Ticket> as IntoIterator>::IntoIter;
+    fn into_iter(self) -> Self::IntoIter {
+        self.tickets.into_iter()
+    }
+}
+
 impl TicketStore {
     pub fn new() -> Self {
         Self {
