@@ -1,6 +1,7 @@
+use serde::{Deserialize, Serialize};
 use std::convert::TryFrom;
 
-#[derive(Debug, PartialEq, Clone, Eq)]
+#[derive(Debug, PartialEq, Clone, Eq, Serialize, Deserialize)]
 pub struct TicketTitle(String);
 
 #[derive(Debug, thiserror::Error)]
