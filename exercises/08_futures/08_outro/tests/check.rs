@@ -20,14 +20,13 @@ async fn test_ticket() {
     let id = create_response.json::<outro_08::store::TicketId>();
     create_response.assert_status_success();
 
-    let get_response = server
-        .get(&"/get")
-        .json(&serde_json::to_string(&id).unwrap())
-        .await;
+    let get_response = server.get(&"/get").json(&id).await;
     get_response.assert_status_ok();
     get_response.assert_json(&json!({
+        "id": 0,
         "title": "test",
         "description": "lorem ipsum",
+        "status": "ToDo",
     }));
 
     let patch_response = server
@@ -35,7 +34,7 @@ async fn test_ticket() {
         .json(&json!({
             "id": id,
             "title": "new title",
-            "status": "DONE",
+            "status": "Done",
         }))
         .await;
     patch_response.assert_status_ok();
