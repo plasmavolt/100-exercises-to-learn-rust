@@ -1,3 +1,7 @@
+### my thoughts (frank)
+
+This is a gem of a book. Huge fan of this pedagogical style; I went from knowing almost nothing about this language to feeling pretty confident in my ability to read, debug, implement code, and, most importantly, learn more Rust. Smart to frame the book around building a ticket management system, since it makes everything you learn feel very grounded. The final exercise is also very well executed. Highly recommend!
+
 # Learn Rust, one exercise at a time
 
 You've heard about Rust, but you never had the chance to try it out?\
